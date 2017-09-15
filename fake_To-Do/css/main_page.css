@@ -1,0 +1,51 @@
+html {
+    text-align: center;
+    height: 100%;
+}
+
+body {
+    background-color: gray;
+    margin: auto;
+    height: 100%;
+}
+
+#topBar {
+    height: 30%;
+    background-color: orange;
+}
+
+.ic_top {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background-size: cover;
+    margin: 10px;
+}
+
+#sideButton {
+    background-image: url(../img/ic_side_button.png);
+    float: left;
+}
+
+#menu {
+    background-image: url(../img/ic_suggestions.png);
+    float: right;
+}
+
+#title {
+    position: absolute;
+    left: 1em;
+    top: 15%;
+    text-align: left;
+    color: white;
+}
+
+#Text {
+    font-size: 2em;
+    margin: 0;
+}
+
+#date {
+    font-size: 1em;
+    margin: 5px;
+}
