@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 1000px;
+    height: 370px;
+    margin: 50px auto auto auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slider {
+    width: 500%;
+    height: 100%;
+    list-style: none;
+    position: relative;
+    transition: left 0.3s ease-out;
+}
+
+.slider li {
+    float: left;
+}
+
+.slider li img {
+    width: 1000px;
+}
+
+.button {
+    position: relative;
+    bottom: 240px;
+    font-size: 4em;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.button:hover {
+    color: gray;
+}
+
+#prev {
+    float: left;
+}
+
+#next {
+    float: right;
+}

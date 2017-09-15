@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>slideshow</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div id="container" onmouseover="stop()" onmouseout="play()">
+        <ul class="slider" style="left: 0;">
+            <li class="slide-li">
+                <a href=""><img src="img/1.jpg" alt="img1"></a>
+            </li>
+            <li class="slide-li">
+                <a href=""><img src="img/2.jpg" alt="img2"></a>
+            </li>
+            <li class="slide-li">
+                <a href=""><img src="img/3.jpg" alt="img3"></a>
+            </li>
+            <li class="slide-li">
+                <a href=""><img src="img/4.jpg" alt="img4"></a>
+            </li>
+        </ul>
+        <div class="button" id="prev" onclick="prev()">
+            <p>&lt;</p>
+        </div>
+        <div class="button" id="next" onclick="next()">
+            <p>&gt;</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
