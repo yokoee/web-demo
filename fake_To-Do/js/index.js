@@ -19,3 +19,7 @@ switch (tmpDate.getDay()) {
 
 }
 document.getElementById('date').textContent = (tmpDate.getMonth() + 1) + '月' + tmpDate.getDate() + '日星期' + day;
+
+//theme-color
+let themeColor = document.getElementsByName('theme-color')[0];
+let topBar = document.getElementById('topBar');
