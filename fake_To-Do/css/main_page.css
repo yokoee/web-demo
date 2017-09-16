@@ -9,11 +9,13 @@ body {
 }
 
 #mainPage {
-    height: 30%;
+    height: 100%;
 }
 
 #topBar {
-    height: 100%;
+    max-height: 30%;
+    min-height: 8%;
+    height: 30%;
     background-color: #3366ff;
 }
 
