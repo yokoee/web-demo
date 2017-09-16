@@ -27,3 +27,7 @@ function changeThemeColor() {
     themeColor.content = window.getComputedStyle(topBar, null).backgroundColor;
 }
 changeThemeColor();
+
+//#title定位
+let title = document.getElementById('title');
+title.style.top = "calc(30% - " + window.getComputedStyle(title, null).height + ")";
