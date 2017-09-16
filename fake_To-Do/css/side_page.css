@@ -1,0 +1,113 @@
+#sidePage {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#sideContent {
+    position: fixed;
+    right: 100%;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    float: left;
+    text-align: left;
+}
+
+#sideShadow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    float: right;
+}
+
+#avatar {
+    background-image: url(../img/ic_user.png);
+    float: left;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+}
+
+#searchButton {
+    background-image: url(../img/ic_search.png);
+    float: right;
+}
+
+.ic_side {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-size: cover;
+    margin: 12px;
+}
+
+.user_info {
+    clear: both;
+    margin: 5px 0 0 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+#email {
+    color: gray;
+}
+
+.list {
+    list-style-type: none;
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+.list.selected {
+    background: rgba(50%, 50%, 50%, 0.1);
+}
+
+.list i {
+    display: inline-block;
+    width: 1.3em;
+    height: 1.3em;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.list i:before {
+    content: '\3000';
+}
+
+#ic_my_day {
+    background-image: url(../img/ic_my_day.png);
+}
+
+#ic_To_Do {
+    background-image: url(../img/ic_To_Do.png);
+}
+
+.list.other i {
+    background-image: url(../img/ic_other.png);
+}
+
+
+/* 侧滑页动画 */
+
+@keyframes slide-out {
+    from {
+        right: 100%;
+    }
+    to {
+        right: 20%;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}
