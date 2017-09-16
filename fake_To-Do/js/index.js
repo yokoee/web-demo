@@ -55,6 +55,8 @@ document.getElementById('openSideButton').onclick = function() {
 //top bar
 let topBar = document.getElementById('topBar');
 let mainPage = document.getElementById('mainPage');
-mainPage.ontouchmove = function() {
-    console.log(event);
-}
+let startX, endX;
+mainPage.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    console.log(e.changedTouches);
+})
