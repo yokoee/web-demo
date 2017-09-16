@@ -31,3 +31,11 @@ changeThemeColor();
 //#title定位
 let title = document.getElementById('title');
 title.style.top = "calc(30% - " + window.getComputedStyle(title, null).height + ")";
+
+//
+document.getElementById('sideShadow').onclick = function() {
+    document.getElementById('sidePage').style.display = 'none';
+}
+document.getElementById('openSideButton').onclick = function() {
+    document.getElementById('sidePage').style.display = 'block';
+}
