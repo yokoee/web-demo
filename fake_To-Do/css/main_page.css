@@ -54,3 +54,24 @@ body {
     font-size: 1.2em;
     margin: 5px;
 }
+
+
+/* top bar 动画*/
+
+@keyframes to-big-bar {
+    from {
+        height: 10%;
+    }
+    to {
+        height: 30%;
+    }
+}
+
+@keyframes to-slim-bar {
+    from {
+        height: 30%;
+    }
+    to {
+        height: 10%;
+    }
+}
