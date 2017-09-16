@@ -34,11 +34,19 @@ title.style.top = "calc(30% - " + window.getComputedStyle(title, null).height + 
 
 //侧滑页
 document.getElementById('sideShadow').onclick = function() {
-    document.getElementById('sidePage').style.display = 'none';
+    document.getElementById('sideContent').style.animation = 'slide-in 0.5s ease-in';
+    document.getElementById('sideContent').style.animationFillMode = 'forwards';
+    document.getElementById('sideShadow').style.animation = 'slide-in-shadow 0.5s ease-in';
+    document.getElementById('sideShadow').style.animationFillMode = 'forwards';
+    setTimeout(() => {
+        document.getElementById('sidePage').style.display = 'none';
+    }, 500)
 }
 document.getElementById('openSideButton').onclick = function() {
     document.getElementById('sidePage').style.display = 'block';
-    document.getElementById('sideContent').style.animation = 'slide-out 0.1s ease-out';
+    document.getElementById('sideContent').style.animation = 'slide-out 0.5s ease-out';
     document.getElementById('sideContent').style.animationFillMode = 'forwards';
+    document.getElementById('sideShadow').style.animation = 'slide-out-shadow 0.5s ease-out';
+    document.getElementById('sideShadow').style.animationFillMode = 'forwards';
 
 }

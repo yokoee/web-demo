@@ -106,9 +106,27 @@
 
 @keyframes slide-in {
     from {
-        right: 0;
+        right: 20%;
     }
     to {
         right: 100%;
+    }
+}
+
+@keyframes slide-out-shadow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.7;
+    }
+}
+
+@keyframes slide-in-shadow {
+    from {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 0;
     }
 }
