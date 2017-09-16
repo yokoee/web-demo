@@ -38,7 +38,7 @@ document.getElementById('sideShadow').onclick = function() {
 }
 document.getElementById('openSideButton').onclick = function() {
     document.getElementById('sidePage').style.display = 'block';
-    document.getElementById('sideContent').style.animation = 'slide-out 0.5s ease-out';
+    document.getElementById('sideContent').style.animation = 'slide-out 0.2s ease-out';
     document.getElementById('sideContent').style.animationFillMode = 'forwards';
 
 }
