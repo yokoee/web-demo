@@ -118,7 +118,11 @@ body {
 .list {
     list-style-type: none;
     font-size: 1.1em;
-    padding: 5px 5px 5px 12px;
+    padding: 10px;
+}
+
+.list.selected {
+    background: rgba(50%, 50%, 50%, 0.1);
 }
 
 .list i {
