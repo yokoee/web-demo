@@ -94,13 +94,20 @@ document.getElementById('openSideButton').onclick = function() {
 let startY, moveY, lastMoveY, endY;
 
 let topBar = document.getElementById('topBar');
-let mainPageHeight = Number(window.getComputedStyle(mainPage, null).height.slice(0, -2));
+let topBarFill = document.getElementById('topBarFill');
+let title = document.getElementById('title');
+let mainPageHeight = pxToNum(window.getComputedStyle(mainPage, null).height);
 
 topBar.style.height = mainPageHeight * 0.3 + "px";
 topBar.style.maxHeight = mainPageHeight * 0.3 + "px";
 topBar.style.minHeight = mainPageHeight * 0.08 + "px";
 
+topBarFill.style.height = mainPageHeight * 0.3 + "px";
+topBarFill.style.maxHeight = mainPageHeight * 0.3 + "px";
+topBarFill.style.minHeight = mainPageHeight * 0.08 + "px";
+
 let topBarHeight = mainPageHeight * 0.3;
+title.style.top = topBarHeight - pxToNum(window.getComputedStyle(title, null).height) + 'px';
 
 
 mainPage.addEventListener('touchstart', function(e) {
@@ -114,6 +121,11 @@ mainPage.addEventListener('touchmove', function(e) {
     moveY = e.changedTouches[0].pageY;
     topBarHeight = topBarHeight + moveY - lastMoveY;
     topBar.style.height = topBarHeight + "px";
+
+    topBarFill.style.height = topBarHeight + "px";
+
+    title.style.top = topBarHeight - pxToNum(window.getComputedStyle(title, null).height) + 'px';
+
     console.log('moveY:' + moveY);
     lastMoveY = moveY;
     console.log(topBar.style.height);
@@ -124,7 +136,21 @@ mainPage.addEventListener('touchend', function(e) {
     console.log('endY:' + endY);
     if (topBarHeight >= mainPageHeight * 0.19) {
         topBar.style.height = mainPageHeight * 0.3 + "px";
+
+        topBarFill.style.height = mainPageHeight * 0.3 + "px";
+
+        title.style.top = pxToNum(topBar.style.height) - pxToNum(window.getComputedStyle(title, null).height) + 'px';
     } else {
         topBar.style.height = mainPageHeight * 0.08 + "px";
+
+        topBarFill.style.height = mainPageHeight * 0.08 + "px";
+
+        title.style.top = pxToNum(topBar.style.height) - pxToNum(window.getComputedStyle(title, null).height) + 'px';
     }
 })
+
+
+
+function pxToNum(px) {
+    return Number(px.slice(0, -2));
+}
