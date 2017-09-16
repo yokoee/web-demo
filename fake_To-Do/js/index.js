@@ -111,7 +111,6 @@ title.style.top = topBarHeight - pxToNum(window.getComputedStyle(title, null).he
 
 
 mainPage.addEventListener('touchstart', function(e) {
-    e.preventDefault();
     startY = e.changedTouches[0].pageY;
     console.log('startY:' + startY);
     lastMoveY = startY;
@@ -131,7 +130,6 @@ mainPage.addEventListener('touchmove', function(e) {
     console.log(topBar.style.height);
 })
 mainPage.addEventListener('touchend', function(e) {
-    e.preventDefault();
     endY = e.changedTouches[0].pageY;
     console.log('endY:' + endY);
     if (topBarHeight >= mainPageHeight * 0.19) {
