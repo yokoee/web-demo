@@ -28,35 +28,65 @@ function changeThemeColor() {
 }
 changeThemeColor();
 
-//#title定位
-let title = document.getElementById('title');
-title.style.top = "calc(30% - " + window.getComputedStyle(title, null).height + ")";
 
-//侧滑页
+//侧栏按钮打开
 let sideContent = document.getElementById('sideContent');
 let sideShadow = document.getElementById('sideShadow');
-document.getElementById('sideShadow').onclick = function() {
+let sidePage = document.getElementById('sidePage');
+
+sideShadow.onclick = function() {
     sideContent.style.animation = 'slide-in 0.3s ease-in';
     sideContent.style.animationFillMode = 'forwards';
     sideShadow.style.animation = 'slide-in-shadow 0.3s ease-in';
     sideShadow.style.animationFillMode = 'forwards';
     setTimeout(() => {
-        document.getElementById('sidePage').style.display = 'none';
+        sidePage.style.display = 'none';
     }, 300)
 }
-document.getElementById('openSideButton').onclick = function() {
-    document.getElementById('sidePage').style.display = 'block';
-    sideContent.style.animation = 'slide-out 0.3s ease-out';
-    sideContent.style.animationFillMode = 'forwards';
-    sideShadow.style.animation = 'slide-out-shadow 0.3s ease-in';
-    sideShadow.style.animationFillMode = 'forwards';
-}
 
-//top bar
-let topBar = document.getElementById('topBar');
-let mainPage = document.getElementById('mainPage');
-let startX, endX;
-mainPage.addEventListener('touchstart', function(e) {
-    e.preventDefault();
-    console.log(e.changedTouches);
-})
+document.getElementById('openSideButton').onclick = function() {
+        sidePage.style.display = 'block';
+        sideContent.style.animation = 'slide-out 0.3s ease-out';
+        sideContent.style.animationFillMode = 'forwards';
+        sideShadow.style.animation = 'slide-out-shadow 0.3s ease-in';
+        sideShadow.style.animationFillMode = 'forwards';
+    }
+    /*
+    //侧栏滑动打开
+    let mainPage = document.getElementById('mainPage');
+    let startX, moveX, endX;
+    let effectiveX = 25;
+    console.log('effectiveX:' + effectiveX);
+    let mainPageWidth = window.getComputedStyle(mainPage, null).width;
+
+    mainPage.addEventListener('touchstart', function(e) {
+        startX = e.changedTouches[0].pageX;
+        console.log('startX:' + startX);
+        if (startX <= effectiveX) {
+            sidePage.style.display = 'block';
+            sideContent.style.right = (mainPageWidth - startX) + 'px';
+        }
+    })
+    mainPage.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        moveX = e.changedTouches[0].pageX;
+        console.log('moveX:' + moveX);
+        if ((startX <= effectiveX)) {
+            sideContent.style.right = (mainPageWidth - moveX) + 'px';
+        }
+    })
+    mainPage.addEventListener('touchend', function(e) {
+        endX = e.changedTouches[0].pageX;
+        console.log('endX:' + endX);
+        //滑动距离不超过70px则侧栏不会打开
+        if ((startX <= effectiveX) && (endX - startX >= 70)) {
+            sidePage.style.display = 'block';
+            sideContent.style.right = '20%';
+            console.log('open')
+        } else {
+            sideContent.style.right = '100%';
+            sidePage.style.display = 'none';
+            console.log('close')
+        }
+    })
+    */
