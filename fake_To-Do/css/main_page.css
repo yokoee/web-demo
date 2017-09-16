@@ -15,9 +15,6 @@ body {
 #topBar {
     position: fixed;
     top: 0;
-    max-height: 30%;
-    min-height: 8%;
-    height: 30%;
     width: 100%;
     background-color: #3366ff;
 }

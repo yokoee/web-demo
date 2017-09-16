@@ -28,7 +28,6 @@ function changeThemeColor() {
 }
 changeThemeColor();
 
-
 //侧栏按钮打开
 let sideContent = document.getElementById('sideContent');
 let sideShadow = document.getElementById('sideShadow');
@@ -90,3 +89,40 @@ document.getElementById('openSideButton').onclick = function() {
         }
     })
     */
+
+//top bar
+let startY, moveY, lastMoveY, endY;
+
+let topBar = document.getElementById('topBar');
+let mainPageHeight = Number(window.getComputedStyle(mainPage, null).height.slice(0, -2));
+
+topBar.style.height = mainPageHeight * 0.3 + "px";
+topBar.style.maxHeight = mainPageHeight * 0.3 + "px";
+topBar.style.minHeight = mainPageHeight * 0.08 + "px";
+
+let topBarHeight = mainPageHeight * 0.3;
+
+
+mainPage.addEventListener('touchstart', function(e) {
+    startY = e.changedTouches[0].pageY;
+    console.log('startY:' + startY);
+    lastMoveY = startY;
+})
+mainPage.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    moveY = e.changedTouches[0].pageY;
+    topBarHeight = topBarHeight + moveY - lastMoveY;
+    topBar.style.height = topBarHeight + "px";
+    console.log('moveY:' + moveY);
+    lastMoveY = moveY;
+    console.log(topBar.style.height);
+})
+mainPage.addEventListener('touchend', function(e) {
+    endY = e.changedTouches[0].pageY;
+    console.log('endY:' + endY);
+    if (topBarHeight >= mainPageHeight * 0.08) {
+        topBar.style.height = mainPageHeight * 0.3 + "px";
+    } else {
+        topBar.style.height = mainPageHeight * 0.08 + "px";
+    }
+})
