@@ -122,7 +122,7 @@ mainPage.addEventListener('touchend', function(e) {
     e.preventDefault();
     endY = e.changedTouches[0].pageY;
     console.log('endY:' + endY);
-    if (topBarHeight >= mainPageHeight * 0.08) {
+    if (topBarHeight >= mainPageHeight * 0.19) {
         topBar.style.height = mainPageHeight * 0.3 + "px";
     } else {
         topBar.style.height = mainPageHeight * 0.08 + "px";
