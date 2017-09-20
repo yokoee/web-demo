@@ -91,7 +91,7 @@ document.getElementById('openSideButton').onclick = function() {
     */
 
 //top bar
-let startY, moveY, lastMoveY, endY;
+/* let startY, moveY, lastMoveY, endY;
 
 let topBar = document.getElementById('topBar');
 let topBarFill = document.getElementById('topBarFill');
@@ -149,6 +149,30 @@ mainPage.addEventListener('touchend', function(e) {
 
 
 
+
+ */
+
+/* let topBar = document.getElementById('topBar');
+let topBarFill = document.getElementById('topBarFill');
+let lastY, y;
+lastY = window.pageYOffset;
+
+window.onscroll = function() {
+    console.log('scroll!-----------------------------');
+
+    console.log('y:' + y);
+    console.log('lastY:' + y);
+
+    topBar.style.height = pxToNum(window.getComputedStyle(topBar, null).height) + (window.pageYOffsety - lastY);
+    topBarFill.style.height = pxToNum(window.getComputedStyle(topBarFill, null).height) + (window.pageYOffsety - lastY);
+    lastY = window.pageYOffset;
+}
+
+function chgTopBarHeight(height) {
+    topBar.style.height = pxToNum(window.getComputedStyle(topBar, null).height) + height;
+    topBarFill.style.height = pxToNum(window.getComputedStyle(topBarFill, null).height) + height;
+}
+
 function pxToNum(px) {
     return Number(px.slice(0, -2));
-}
+} */
