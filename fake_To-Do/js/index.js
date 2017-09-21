@@ -1,25 +1,3 @@
-/* // “我的一天”清单页日期
-let tmpDate = new Date();
-let day;
-switch (tmpDate.getDay()) {
-    case 0:
-        day = '日';
-    case 1:
-        day = '一';
-    case 2:
-        day = '二';
-    case 3:
-        day = '三';
-    case 4:
-        day = '四';
-    case 5:
-        day = '五';
-    case 6:
-        day = '六';
-
-}
-document.getElementById('date').textContent = (tmpDate.getMonth() + 1) + '月' + tmpDate.getDate() + '日星期' + day;
- */
 // theme-color
 (function changeThemeColor() {
     let themeColor = document.getElementsByName('theme-color')[0];
@@ -27,151 +5,228 @@ document.getElementById('date').textContent = (tmpDate.getMonth() + 1) + '月' +
     themeColor.content = window.getComputedStyle(topBar, null).backgroundColor;
 })();
 
-// 侧栏按钮打开
-let sideContent = document.getElementById('sideContent');
-let sideShadow = document.getElementById('sideShadow');
-let sidePage = document.getElementById('sidePage');
+// 侧栏打开关闭
+document.getElementById('sideShadow').onclick = closeSidePage;
+document.getElementById('openSideButton').onclick = openSidePage;
 
-sideShadow.onclick = function() {
-    sideContent.style.animation = 'slide-in 0.3s ease-in';
+function closeSidePage() {
+    let sideContent = document.getElementById('sideContent');
+    let sideShadow = document.getElementById('sideShadow');
+    let sidePage = document.getElementById('sidePage');
+
+    sideContent.style.animation = 'slide-in 0.2s ease-in';
     sideContent.style.animationFillMode = 'forwards';
-    sideShadow.style.animation = 'slide-in-shadow 0.3s ease-in';
+    sideShadow.style.animation = 'slide-in-shadow 0.2s ease-in';
     sideShadow.style.animationFillMode = 'forwards';
     setTimeout(() => {
         sidePage.style.display = 'none';
     }, 300)
 }
 
-document.getElementById('openSideButton').onclick = function() {
-        sidePage.style.display = 'block';
-        sideContent.style.animation = 'slide-out 0.3s ease-out';
-        sideContent.style.animationFillMode = 'forwards';
-        sideShadow.style.animation = 'slide-out-shadow 0.3s ease-in';
-        sideShadow.style.animationFillMode = 'forwards';
+function openSidePage() {
+    let sideContent = document.getElementById('sideContent');
+    let sideShadow = document.getElementById('sideShadow');
+    let sidePage = document.getElementById('sidePage');
+
+    sidePage.style.display = 'block';
+    sideContent.style.animation = 'slide-out 0.2s ease-out';
+    sideContent.style.animationFillMode = 'forwards';
+    sideShadow.style.animation = 'slide-out-shadow 0.2s ease-in';
+    sideShadow.style.animationFillMode = 'forwards';
+}
+
+
+// 初始数据开始 ---------------------------------------------------------------
+let defaultToDo = [{
+        id: 1505976370490,
+        list: 'To-Do',
+        text: '第一条待办事项',
+        completed: new Date(1505977093181),
+        creationDate: new Date(1505976370490),
+        note: '这是一条备注',
+    },
+    {
+        id: 1505976523907,
+        list: 'To-Do',
+        text: '第二条待办事项',
+        completed: false,
+        creationDate: new Date(1505976523907),
+        note: '这是一条备注',
+    }, {
+        id: 1505976540205,
+        list: '其它清单',
+        text: '第一条其它待办事项',
+        completed: false,
+        creationDate: new Date(1505976540205),
+        note: '这是一条备注',
     }
-    /*
-    //侧栏滑动打开
-    let mainPage = document.getElementById('mainPage');
-    let startX, moveX, endX;
-    let effectiveX = 25;
-    console.log('effectiveX:' + effectiveX);
-    let mainPageWidth = window.getComputedStyle(mainPage, null).width;
+];
 
-    mainPage.addEventListener('touchstart', function(e) {
-        startX = e.changedTouches[0].pageX;
-        console.log('startX:' + startX);
-        if (startX <= effectiveX) {
-            sidePage.style.display = 'block';
-            sideContent.style.right = (mainPageWidth - startX) + 'px';
-        }
-    })
-    mainPage.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-        moveX = e.changedTouches[0].pageX;
-        console.log('moveX:' + moveX);
-        if ((startX <= effectiveX)) {
-            sideContent.style.right = (mainPageWidth - moveX) + 'px';
-        }
-    })
-    mainPage.addEventListener('touchend', function(e) {
-        endX = e.changedTouches[0].pageX;
-        console.log('endX:' + endX);
-        //滑动距离不超过70px则侧栏不会打开
-        if ((startX <= effectiveX) && (endX - startX >= 70)) {
-            sidePage.style.display = 'block';
-            sideContent.style.right = '20%';
-            console.log('open')
-        } else {
-            sideContent.style.right = '100%';
-            sidePage.style.display = 'none';
-            console.log('close')
-        }
-    })
-    */
+let defaultList = ['To-Do', '其它清单'];
 
-//top bar
-/* let startY, moveY, lastMoveY, endY;
+if (!window.localStorage.list) window.localStorage.setItem('list', JSON.stringify(defaultList));
+if (!window.localStorage.ToDo) window.localStorage.setItem('ToDo', JSON.stringify(defaultToDo));
 
-let topBar = document.getElementById('topBar');
-let topBarFill = document.getElementById('topBarFill');
-let title = document.getElementById('title');
-let mainPageHeight = pxToNum(window.getComputedStyle(mainPage, null).height);
-
-topBar.style.height = mainPageHeight * 0.3 + "px";
-topBar.style.maxHeight = mainPageHeight * 0.3 + "px";
-topBar.style.minHeight = mainPageHeight * 0.08 + "px";
-
-topBarFill.style.height = mainPageHeight * 0.3 + "px";
-topBarFill.style.maxHeight = mainPageHeight * 0.3 + "px";
-topBarFill.style.minHeight = mainPageHeight * 0.08 + "px";
-
-let topBarHeight = mainPageHeight * 0.3;
-title.style.top = topBarHeight - pxToNum(window.getComputedStyle(title, null).height) + 'px';
+// 初始数据结束 ---------------------------------------------------------------
 
 
-mainPage.addEventListener('touchstart', function(e) {
-    startY = e.changedTouches[0].pageY;
-    console.log('startY:' + startY);
-    lastMoveY = startY;
-})
-mainPage.addEventListener('touchmove', function(e) {
-    e.preventDefault();
-    moveY = e.changedTouches[0].pageY;
-    topBarHeight = topBarHeight + moveY - lastMoveY;
-    topBar.style.height = topBarHeight + "px";
-
-    topBarFill.style.height = topBarHeight + "px";
-
-    title.style.top = topBarHeight - pxToNum(window.getComputedStyle(title, null).height) + 'px';
-
-    console.log('moveY:' + moveY);
-    lastMoveY = moveY;
-    console.log(topBar.style.height);
-})
-mainPage.addEventListener('touchend', function(e) {
-    endY = e.changedTouches[0].pageY;
-    console.log('endY:' + endY);
-    if (topBarHeight >= mainPageHeight * 0.19) {
-        topBar.style.height = mainPageHeight * 0.3 + "px";
-
-        topBarFill.style.height = mainPageHeight * 0.3 + "px";
-
-        title.style.top = pxToNum(topBar.style.height) - pxToNum(window.getComputedStyle(title, null).height) + 'px';
+// 数据操作开始 ---------------------------------------------------------------
+function addList(name) {
+    let list = JSON.parse(window.localStorage.list);
+    if (list.indexOf(name) == -1) {
+        list.push(name);
+        window.localStorage.setItem('list', JSON.stringify(list));
+        return 'add list ' + name + ' success!';
     } else {
-        topBar.style.height = mainPageHeight * 0.08 + "px";
-
-        topBarFill.style.height = mainPageHeight * 0.08 + "px";
-
-        title.style.top = pxToNum(topBar.style.height) - pxToNum(window.getComputedStyle(title, null).height) + 'px';
+        return 0;
     }
-})
-
-
-
-
- */
-
-/* let topBar = document.getElementById('topBar');
-let topBarFill = document.getElementById('topBarFill');
-let lastY, y;
-lastY = window.pageYOffset;
-
-window.onscroll = function() {
-    console.log('scroll!-----------------------------');
-
-    console.log('y:' + y);
-    console.log('lastY:' + y);
-
-    topBar.style.height = pxToNum(window.getComputedStyle(topBar, null).height) + (window.pageYOffsety - lastY);
-    topBarFill.style.height = pxToNum(window.getComputedStyle(topBarFill, null).height) + (window.pageYOffsety - lastY);
-    lastY = window.pageYOffset;
 }
 
-function chgTopBarHeight(height) {
-    topBar.style.height = pxToNum(window.getComputedStyle(topBar, null).height) + height;
-    topBarFill.style.height = pxToNum(window.getComputedStyle(topBarFill, null).height) + height;
+function delList(name) {
+    let list = JSON.parse(window.localStorage.list);
+    let ToDo = JSON.parse(window.localStorage.ToDo);
+
+    let index = list.indexOf(name);
+    if (index != -1) {
+        list.splice(index, 1);
+
+        for (var i = ToDo.length - 1; i >= 0; i--) {
+            if (ToDo[i].list == name) ToDo.splice(i, 1);
+        }
+        window.localStorage.setItem('list', JSON.stringify(list));
+        window.localStorage.setItem('ToDo', JSON.stringify(ToDo));
+        return 'delete list ' + name + ' success!';
+    } else {
+        return 0;
+    }
 }
 
-function pxToNum(px) {
-    return Number(px.slice(0, -2));
-} */
+function updateList(oldName, newName) {
+    let list = JSON.parse(window.localStorage.list);
+    let ToDo = JSON.parse(window.localStorage.ToDo);
+    if (!newName) return 0;
+
+    let index = list.indexOf(oldName);
+    if (index != -1) {
+        list[index] = newName;
+
+        ToDo.forEach((e) => {
+            if (e.list == oldName) e.list = newName;
+        });
+        window.localStorage.setItem('list', JSON.stringify(list));
+        window.localStorage.setItem('ToDo', JSON.stringify(ToDo));
+        return oldName + ' rename to ' + newName;
+    } else {
+        return 0;
+    }
+}
+
+function addItem(args) {
+    let list = JSON.parse(window.localStorage.list);
+    let ToDo = JSON.parse(window.localStorage.ToDo);
+
+    if (!args.text) {
+        return 0;
+    } else {
+        if (args.list && list.indexOf(args.list) == -1) addList(args.list);
+        ToDo.push(setItem(args));
+        window.localStorage.setItem('ToDo', JSON.stringify(ToDo));
+        return 1;
+    }
+}
+
+function delItem(id) {
+    let ToDo = JSON.parse(window.localStorage.ToDo);
+    for (var i = 0; i < ToDo.length; i++) {
+        if (ToDo[i].id == id) {
+            ToDo.splice(i, 1);
+            break;
+        }
+    }
+    window.localStorage.setItem('ToDo', JSON.stringify(ToDo));
+}
+
+function updateItem(id, args) {
+    let ToDo = JSON.parse(window.localStorage.ToDo);
+    ToDo.forEach((e) => {
+        if (e.id == id) {
+            Object.assign(e, args);
+            e.creationDate = new Date();
+        }
+    })
+    window.localStorage.setItem('ToDo', JSON.stringify(ToDo));
+}
+
+function setItem(args) {
+    let now = new Date();
+    if (!args.id) args.id = now.getTime();
+    if (!args.list) args.list = 'To-Do';
+    if (!args.text) args.text = '';
+    if (!args.completed) args.completed = false;
+    if (!args.creationDate) args.creationDate = now;
+    if (!args.note) args.note = '';
+    return args;
+}
+
+// 数据操作结束 ---------------------------------------------------------------
+
+// 设置选中清单
+function setSelected(name) {
+    let selected = document.getElementsByClassName('selected');
+    for (var i = 0; i < selected.length; i++) {
+        selected[i].className = selected[i].className.replace('selected', '');
+    }
+    let willSelected = document.getElementById(name);
+    willSelected.className += ' selected';
+}
+
+// 初始化清单列表开始 ---------------------------------------------------------------
+createListUI();
+setSelected('To-Do');
+
+function updateListUI() {
+    let listContainer = document.getElementById('listContainer');
+    while (listContainer.firstChild) listContainer.removeChild(listContainer.firstChild);
+    createListUI();
+}
+
+function createListUI() {
+    let listContainer = document.getElementById('listContainer');
+    let list = JSON.parse(window.localStorage.list)
+    list.forEach((e) => {
+        let li = document.createElement('li');
+        li.id = e;
+        li.className = 'list other';
+        let icon = document.createElement('i');
+        let text = document.createTextNode(e);
+        li.appendChild(icon);
+        li.appendChild(text);
+        li.setAttribute('onclick', 'changeSelected(this)');
+        listContainer.appendChild(li);
+    });
+}
+// 初始化清单列表结束 ---------------------------------------------------------------
+
+// 初始化待办事项列表
+//
+//
+
+// 新建清单
+document.getElementById('addListContainer').onclick = function() {
+    let newList = prompt('新建清单');
+    if (newList) {
+        addList(newList);
+        updateListUI();
+        setSelected(newList);
+        // 待办事项列表更新 ----------------------------------------------------------------------------------
+        // 待办事项列表更新 ----------------------------------------------------------------------------------
+    }
+}
+
+// 切换清单
+function changeSelected(that) {
+    setSelected(that.id);
+    closeSidePage();
+    document.getElementById('Text').textContent = that.id;
+
+}

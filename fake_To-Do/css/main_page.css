@@ -39,7 +39,7 @@ body {
 }
 
 #menu {
-    background-image: url(../img/ic_suggestions.png);
+    background-image: url(../img/ic_menu.png);
     float: right;
 }
 
@@ -55,22 +55,41 @@ body {
 }
 
 
-/* top bar 动画*/
+/* 待办事项列表 */
 
-@keyframes to-big-bar {
-    from {
-        height: 10%;
-    }
-    to {
-        height: 30%;
-    }
+.todo {
+    text-align: left;
+    font-size: 18px;
+    box-shadow: 0 0.5px 0.2px #ccc;
+    height: 44px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
 }
 
-@keyframes to-slim-bar {
-    from {
-        height: 30%;
-    }
-    to {
-        height: 10%;
-    }
+.todo p {
+    display: inline-block;
+    margin: 10px;
+}
+
+.unchecked,
+.checked {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    margin-left: 15px;
+}
+
+.unchecked {
+    background-image: url(../img/ic_unchecked.png);
+}
+
+.checked {
+    background-image: url(../img/ic_checked.png);
+}
+
+.unchecked:before,
+.checked:before {
+    content: '\3000';
 }
