@@ -1,4 +1,4 @@
-//“我的一天”清单页日期
+/* // “我的一天”清单页日期
 let tmpDate = new Date();
 let day;
 switch (tmpDate.getDay()) {
@@ -19,16 +19,26 @@ switch (tmpDate.getDay()) {
 
 }
 document.getElementById('date').textContent = (tmpDate.getMonth() + 1) + '月' + tmpDate.getDate() + '日星期' + day;
-
-//theme-color
-function changeThemeColor() {
+ */
+// theme-color
+(function changeThemeColor() {
     let themeColor = document.getElementsByName('theme-color')[0];
     let topBar = document.getElementById('topBar');
     themeColor.content = window.getComputedStyle(topBar, null).backgroundColor;
-}
-changeThemeColor();
+})();
 
-//侧栏按钮打开
+
+// title定位
+(function titleOffset() {
+    let title = document.getElementById('title');
+    let topBar = document.getElementById('topBar');
+
+    let titleHeight = Number(window.getComputedStyle(title).height.slice(0, -2));
+    let topBarHeight = Number(window.getComputedStyle(topBar).height.slice(0, -2));
+    title.style.top = topBarHeight - titleHeight + 'px';
+})();
+
+// 侧栏按钮打开
 let sideContent = document.getElementById('sideContent');
 let sideShadow = document.getElementById('sideShadow');
 let sidePage = document.getElementById('sidePage');

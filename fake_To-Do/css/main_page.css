@@ -16,12 +16,13 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 20%;
+    height: 50px;
     background-color: #3366ff;
 }
 
 #topBarFill {
     width: 100%;
+    height: 50px;
 }
 
 .ic_top {
@@ -43,21 +44,14 @@ body {
 }
 
 #title {
-    position: absolute;
-    left: 5em;
-    top: 30%;
-    text-align: left;
     color: white;
+    height: 100%;
+    width: 100%;
 }
 
 #Text {
-    font-size: 2em;
-    margin: 0;
-}
-
-#date {
-    font-size: 1em;
-    margin: 5px;
+    font-size: 24px;
+    margin: 10px;
 }
 
 
