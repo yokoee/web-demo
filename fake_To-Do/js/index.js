@@ -27,17 +27,6 @@ document.getElementById('date').textContent = (tmpDate.getMonth() + 1) + '月' +
     themeColor.content = window.getComputedStyle(topBar, null).backgroundColor;
 })();
 
-
-// title定位
-(function titleOffset() {
-    let title = document.getElementById('title');
-    let topBar = document.getElementById('topBar');
-
-    let titleHeight = Number(window.getComputedStyle(title).height.slice(0, -2));
-    let topBarHeight = Number(window.getComputedStyle(topBar).height.slice(0, -2));
-    title.style.top = topBarHeight - titleHeight + 'px';
-})();
-
 // 侧栏按钮打开
 let sideContent = document.getElementById('sideContent');
 let sideShadow = document.getElementById('sideShadow');
