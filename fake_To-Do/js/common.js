@@ -209,6 +209,12 @@ function setSelected(list) {
     updateTodoUI(list);
 }
 
+// 获取选中清单
+function getSelected() {
+    let selected = document.getElementsByClassName('selected');
+    return selected[0].textContent;
+}
+
 // 搜索按钮点击
 function clickSearchBtn() {
     let searchButton = document.getElementById('searchButton');
@@ -218,7 +224,17 @@ function clickSearchBtn() {
 }
 clickSearchBtn();
 
-
+// 新建待办事项按钮点击
+function clickAddTodoBtn() {
+    let addTodoBtn = document.getElementById('addTodoBtn');
+    addTodoBtn.onclick = function() {
+        let newTodo = prompt('新建待办事项');
+        console.log(newTodo)
+        addItem({ text: newTodo, list: getSelected() });
+        updateTodoUI(getSelected());
+    }
+}
+clickAddTodoBtn();
 // menu键打开关闭菜单
 (function() {
     let menu = document.getElementById('menu');
