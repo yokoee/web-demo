@@ -16,20 +16,23 @@
     <div id="mainPage">
         <div id="topBar">
             <i id="openSideButton" class="ic_top"></i>
-            <i id="menu" class="ic_top"></i>
+            <i id="menu" class="ic_top">
+                <div id="menuList"><!-- <li>隐藏已完成</li> --><li id="menuRenameList">重命名清单</li><li id="menuDelList">删除清单</li></div>
+            </i>
             <div id="title">
                 <p id="Text">To-Do</p>
             </div>
         </div>
         <div id="topBarFill"></div>
         <div id="todoContainer">
-            <div id="1505976370490" class="todo"><i class="checked"></i>
-                <p>这是第一条待办事项aaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <!-- <div id="1505976370490" class="todo checked" onclick="toggleChecked(this)"><i class="checkBtn"></i>
+                <p class="checkP">这是第一条待办事项</p>
             </div>
-            <div id="1505976523907" class="todo"><i class="unchecked"></i>
-                <p>这是第二条待办事项bbbbbbbbbbbbbbbbbb</p>
-            </div>
+            <div id="1505976523907" class="todo unchecked" onclick="toggleChecked(this)"><i class="checkBtn"></i>
+                <p class="checkP">这是第二条待办事项</p>
+            </div> -->
         </div>
+        <div id="addTodoBtn"></div>
     </div>
     <div id="sidePage">
         <div id="sideShadow"></div>
@@ -53,5 +56,7 @@
 
 </body>
 <script src="js/index.js"></script>
+<script src="js/common.js"></script>
+</script>
 
 </html>

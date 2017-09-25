@@ -43,6 +43,27 @@ body {
     float: right;
 }
 
+#menuList {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    width: 110px;
+    list-style-type: none;
+    text-align: left;
+    background-color: white;
+    font-style: normal;
+    box-shadow: 0 0 10px gray;
+}
+
+#menuList li {
+    padding: 10px 15px;
+}
+
+#menuList li:hover {
+    background-color: rgba(50%, 50%, 50%, 0.1);
+}
+
 #title {
     color: white;
     height: 100%;
@@ -72,8 +93,7 @@ body {
     margin: 10px;
 }
 
-.unchecked,
-.checked {
+.checkBtn {
     display: inline-block;
     width: 25px;
     height: 25px;
@@ -81,15 +101,19 @@ body {
     margin-left: 15px;
 }
 
-.unchecked {
+.unchecked>.checkBtn {
     background-image: url(../img/ic_unchecked.png);
 }
 
-.checked {
+.checked>.checkP {
+    text-decoration-line: line-through;
+    color: gray;
+}
+
+.checked>.checkBtn {
     background-image: url(../img/ic_checked.png);
 }
 
-.unchecked:before,
-.checked:before {
+.checkBtn:before {
     content: '\3000';
 }
