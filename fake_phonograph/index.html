@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>fake_phonograph</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/songs.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <audio id="audio"></audio>
+    <div id="player">
+        <div id="album">
+            <img src="img/album/default_album_art.jpg">
+        </div>
+        <div id="control">
+            <div class="player-progress">
+                <div class="panel">
+                    <div class="current-position"></div>
+                </div>
+                <span class="player-position">0:00</span>
+                <span class="player-duration">0:00</span>
+            </div>
+            <div id="btn-wrap">
+                <div class="btn btn-loop"><i class="loop-off"></i></div>
+                <div class="btn btn-prev"><i class="prev"></i></div>
+                <div class="btn btn-palyOrPause"><i class="pausing"></i></div>
+                <div class="btn btn-next"><i class="next"></i></div>
+                <div class="btn btn-random"><i class="random-off"></i></div>
+            </div>
+            <div id="play-list">
+                <div id="list-playing">
+                    <i class="ic-speaker"></i>
+                    <div class="music-info">
+                        <div class="title">恋恋风尘</div>
+                        <br>
+                        <div class="artist">程璧</div>
+                    </div>
+                    <i class="ic-arrow"></i>
+                </div>
+                <div class="tip">播放列表：</div>
+                <div id="list-next">
+                    <!-- <div class="next-item 0index current-play">
+                        <i class="ic-dot"></i>
+                        <div class="music-info">
+                            <div class="title">恋恋风尘</div>
+                            <br>
+                            <div class="artist">程璧</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
