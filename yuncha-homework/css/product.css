@@ -1,0 +1,59 @@
+/* product.css */
+
+#container {
+    margin: 50px;
+}
+
+#product-preview {
+    text-align: center;
+    overflow: hidden;
+}
+
+.product-item {
+    display: inline-block;
+    width: 60px;
+    height: 72px;
+    margin: 10px;
+    border-radius: 5px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+}
+
+#detail {
+    margin: 80px;
+    text-align: center;
+}
+
+#detail-picture {
+    display: inline-block;
+    width: 300px;
+    height: 360px;
+    vertical-align: middle;
+}
+
+#detail-description {
+    display: inline-block;
+    width: 250px;
+    height: 300px;
+    vertical-align: middle;
+    padding: 0 30px;
+}
+
+#detail-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#detail-price {
+    color: red;
+}
+
+#detail-text {
+    text-align: left;
+    text-indent: 2em;
+}
