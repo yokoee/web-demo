@@ -87,8 +87,3 @@
 #meituan:hover #meituan-qr {
     display: block;
 }
-
-#footer {
-    position: absolute;
-    bottom: 0;
-}

@@ -104,6 +104,7 @@ export default {
     font-size:15px;
     padding-left:25px;
     box-sizing:border-box;
+    cursor: pointer;
 }
 .nav-item:hover,
 .current-page{

@@ -37,6 +37,7 @@
     width: 100%;
     line-height: 40px;
     background-color: #3FAAF9 !important;
+    cursor: pointer;
 }
 
 .form-message {

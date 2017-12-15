@@ -241,25 +241,38 @@ export default {
   margin-left: 5px;
 }
 .btn-delete{
+  position: relative;
   float: right;
   margin-right: 10px;
   transition: transform 0.1s ease-out;
 }
-.btn-delete:hover{
-  transform: scale(2);
+.btn-delete::after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  cursor: pointer;
+
 }
+/* .btn-delete:hover{
+  transform: scale(2);
+} */
 .btn-delete:active{
   color: #F91538;
 }
 
 .hide-diary{
-   color: transparent;
-   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+   /* color: transparent;
+   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+   filter: blur(0.3em);
+   user-select: none;
 }
-.hide-diary::selection{
+/* .hide-diary::selection{
   color: transparent;
   background-color: transparent;
-}
+} */
 
 .diary-list-leave-to{
   transform: scale(0.1);

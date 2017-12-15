@@ -60,7 +60,7 @@ Mock.mock(new RegExp('/diary'), 'post', function(options) {
 
 // /diary/:id 获取单条日记
 Mock.mock(new RegExp('/diary/*'), 'post', function(options) {
-    return {
+    return Mock.mock({
         statusCode: 200,
         diary: {
             'id|1356998400000-1511525072484': 1,
@@ -71,7 +71,7 @@ Mock.mock(new RegExp('/diary/*'), 'post', function(options) {
             'weather|1': ['晴', '阴', '雨', '风', '雪'],
             'img|0-3': ['./static/img/diary-img.jpg'],
         }
-    }
+    });
 })
 
 // /diary/:id 删除单条日记
@@ -88,9 +88,14 @@ Mock.mock(new RegExp('/diary/add'), 'post', function(options) {
     }
 })
 
-
-/* let moodColor = {
-    'happy': '#00E676',
-    'calm': '#90A4AE',
-    'sad': '#DD2C00'
-} */
+// /calendar 获取当前月份的日记记录情况数据
+Mock.mock(new RegExp('/calendar'), 'post', function(options) {
+    return Mock.mock({
+        'year': '',
+        'month': '',
+        'days|28': [{
+            'date|+1': 1,
+            'diary|1': Mock.Random.range(0, 3),
+        }]
+    });
+})
