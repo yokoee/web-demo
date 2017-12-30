@@ -1,0 +1,137 @@
+body{
+    margin: 0;
+}
+#main{
+    width: 320px;
+    height: 600px;
+    @media screen and(max-width:480px){
+        width: 100%;
+        height: 100%;
+    }
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0 0 10px lightgray;
+    // theme color
+    background: linear-gradient(to bottom, white, white);
+    .album{
+        position: relative;
+        width: 280px;
+        height: 280px;
+        background: url(../img/default-album.jpg);
+        background-size: cover;
+        left: 0;
+        right: 0;
+        margin: 1em auto;
+        border-radius: 10px;
+    }
+    .process{
+        position: relative;
+        @process-bar-height: 3px;
+        user-select: none;
+        .process-bar{
+            position: absolute;
+            width: 260px;
+            height: @process-bar-height;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: white;
+            border-radius: 2px;
+            cursor: pointer;
+            .playing{
+                position: absolute;
+                height: @process-bar-height;
+                // playing bar width && theme color    
+                width: 0;
+                background-color: white;
+                transition: width .5s ease-out;                
+            }
+            .play-dot{
+                position: absolute;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: white;
+                transform: scale(5);
+                left: 0;
+                cursor: pointer;
+                transition: left .5s ease-out;
+            }
+        }
+        .play-time{
+            position: relative;
+            width: 260px;
+            font-size: 10px;
+            left: 0;
+            right: 0;
+            margin:auto;
+            // theme color
+            color: white;
+            &::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .play-position{
+                float: left;
+            }
+            .play-duration{
+                float: right;
+            }
+        }
+
+    }
+    .song-info{
+        text-align: center;
+        margin-top: 60px;
+        .song-title>p{
+            margin: 0;
+            font-size: 25px;
+            color: #2c2c2c;
+        }
+        .song-artist>p{
+            margin: 0;
+            font-size: 15px;
+            // theme color
+            color: white;
+        }
+    }
+    .controls{
+        text-align: center;
+        margin-top: 40px;
+        user-select: none;
+        color: #2c2c2c;
+        .btn(@size){
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            i{
+                font-size: @size;
+            }
+        }
+        .btn-repeat,
+        .btn-shuffle{
+            .btn(24px);
+            margin: 0 20px;            
+            &.repeat-off,
+            &.shuffle-off{
+                opacity: .4;
+            }
+        }
+        .btn-play-previous,
+        .btn-play-next{
+            .btn(24px);
+            margin: 0 10px;
+            // theme color            
+            color: #2c2c2c;
+        }
+        .btn-play-pause{
+            .btn(55px);
+        }
+
+    }
+}

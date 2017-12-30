@@ -1,0 +1,49 @@
+[{
+    "id": 10001,
+    "title": "Riverside",
+    "artist": "Agnes Obel",
+    "filepath": "song/Agnes Obel-Riverside.mp3",
+    "album": "song/album/Agnes Obel-Riverside.jpg"
+}, {
+    "id": 10002,
+    "title": "All This Love",
+    "artist": "Angus & Julia Stone",
+    "filepath": "song/Angus & Julia Stone-All This Love.mp3",
+    "album": "song/album/Angus & Julia Stone-All This Love.jpg"
+}, {
+    "id": 10003,
+    "title": "One Last Time",
+    "artist": "Ariana Grande",
+    "filepath": "song/Ariana Grande-One Last Time.mp3",
+    "album": "song/album/Ariana Grande-One Last Time.jpg"
+}, {
+    "id": 10004,
+    "title": "Watch",
+    "artist": "Billie Eilish",
+    "filepath": "song/Billie Eilish-Watch.mp3",
+    "album": "song/album/Billie Eilish-Watch.jpg"
+}, {
+    "id": 10005,
+    "title": "Nina",
+    "artist": "Ed Sheeran",
+    "filepath": "song/Ed Sheeran-Nina.mp3",
+    "album": "song/album/Ed Sheeran-Nina.jpg"
+}, {
+    "id": 10006,
+    "title": "苦橙",
+    "artist": "林力尧",
+    "filepath": "song/林力尧-苦橙.mp3",
+    "album": "song/album/林力尧-苦橙.jpg"
+}, {
+    "id": 10007,
+    "title": "恒温",
+    "artist": "孙盛希",
+    "filepath": "song/孙盛希-恒温.mp3",
+    "album": "song/album/孙盛希-恒温.jpg"
+}, {
+    "id": 10008,
+    "title": "血腥爱情故事",
+    "artist": "张惠妹",
+    "filepath": "song/张惠妹-血腥爱情故事.mp3",
+    "album": "song/album/张惠妹-血腥爱情故事.jpg"
+}]
